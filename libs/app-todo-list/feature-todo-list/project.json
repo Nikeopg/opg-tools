@@ -1,0 +1,36 @@
+{
+  "name": "todo-list",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/app-todo-list/feature-todo-list/src",
+  "prefix": "lib",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:ng-packagr-lite",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "libs/app-todo-list/feature-todo-list/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/app-todo-list/feature-todo-list/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/app-todo-list/feature-todo-list/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/app-todo-list/feature-todo-list/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  }
+}

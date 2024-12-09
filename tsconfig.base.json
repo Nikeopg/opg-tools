@@ -14,7 +14,11 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@opg-tools/todo-list": [
+        "libs/app-todo-list/feature-todo-list/src/index.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
